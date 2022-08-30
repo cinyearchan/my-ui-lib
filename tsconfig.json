@@ -6,7 +6,8 @@
   },
   "include": [
     "./**/*.*",
-    "./shims-vue.d.ts"
+    "./shims-vue.d.ts",
+    "src/docs/.vitepress/**/*"
   ],
   "exclude": [
     "node_modules"
