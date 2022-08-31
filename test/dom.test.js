@@ -1,6 +1,6 @@
 const { generatorDiv } = require("./dom");
 
-require("./jsdom-config");
+require("../jsdom-config");
 
 describe("DOM test", () => {
   test("test dom operator", () => {
