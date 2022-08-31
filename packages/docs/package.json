@@ -1,0 +1,23 @@
+{
+  "name": "@smash-ui/docs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "docs:register": "vitepress-rc",
+    "docs:dev": "vitepress dev .",
+    "docs:build": "vitepress build .",
+    "docs:serve": "vitepress serve .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "smash-ui": "workspace:^1.0.0"
+  },
+  "devDependencies": {
+    "vitepress": "0.22.4",
+    "vitepress-theme-demoblock": "^1.4.2"
+  }
+}
