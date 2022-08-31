@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prepare": "husky install",
     "preinstall": "node ./scripts/preinstall.js",
     "lint": "cd packages/ui && pnpm run lint",
     "test:run": "cd packages/ui && vitest run",
