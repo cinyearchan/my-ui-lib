@@ -7,6 +7,16 @@ on:
 jobs:
   Lint:
     # Lint任务
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: pnpm/action-setup@2.1.0
+      with:
+        version: 7.2.1
+    - name: Install modules
+      run: pnpm install
+    - name: Run Lint
+      run: pnpm run lint
   UnitTest:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
