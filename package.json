@@ -19,7 +19,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@algolia/client-search": "^4.14.2",
     "@commitlint/cli": "^17.1.2",
