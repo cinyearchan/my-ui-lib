@@ -2,7 +2,7 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
-import Unocss from "./config/unocss";
+import Unocss from "./config/unocss.config";
 
 const rollupOptions = {
   external: ["vue", "vue-router"],
@@ -10,19 +10,18 @@ const rollupOptions = {
     globals: {
       vue: "Vue",
     },
+    assetFileNames: `assets/[name].css`,
   },
 };
 
 export default defineConfig({
-  plugins: [
-    vue(),
-    vueJsx(),
-    Unocss(),
-  ],
+  plugins: [vue(), vueJsx(), Unocss()],
   build: {
     rollupOptions,
     cssCodeSplit: true,
-    minify: false,
+    minify: "terser",
+    sourcemap: true, // 输出单独 sourcemap 文件
+    reportCompressedSize: true, // 生成压缩大小报告
     lib: {
       entry: "./src/entry.ts",
       name: "SmartyUI",
@@ -36,10 +35,10 @@ export default defineConfig({
     globals: true,
     // simulate DOM with happy-dom
     // (requires installing happy-dom as a peer dependency)
-    environment: 'happy-dom',
+    environment: "happy-dom",
     // 支持 tsx 组件
     transformMode: {
-      web: [/.[tj]sx$/]
-    }
-  }
+      web: [/.[tj]sx$/],
+    },
+  },
 });
